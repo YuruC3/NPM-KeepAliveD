@@ -17,19 +17,17 @@ rsync_npmz () {
     # $1 == local_username input
     # $2 == remote_username input
 
-    # NODE-2
-    rsync -avru /home/$1/npm/ $2@192.168.25.15:/home/$2/npm/
+    # NODE-1
+    rsync -avru /home/$1/npm/ $2@<NODE_1_IP>:/home/$2/npm/
 
-    # NODE-3
-    rsync -avru /home/$1/npm/ $2@192.168.25.17:/home/$2/npm/
+    # NODE-2
+    rsync -avru /home/$1/npm/ $2@<NODE_2_IP>:/home/$2/npm/
 
 }
 
 # DEF VARIABLE NAMES
 container_name=$1
-
 local_username=$2
-
 remote_username=$3
 
 state_restarting=$(sudo docker inspect --format="{{.State.Restarting}}" "$container_name")
