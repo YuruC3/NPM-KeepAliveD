@@ -41,6 +41,8 @@ After everything mentioned above restart keepalived service and it should work.
 
 ## Short config explanation
 
+For more indept explanation [here](https://www.keepalived.org/manpage.html) is official documentation for KeepAliveD
+
 ### vrrp_script
 
 interval 5 -- Runs script every 5 seconds. It means that downtime should be for about 5 seconds. You can tweak it to a lower number but then set rise to a higher number.
