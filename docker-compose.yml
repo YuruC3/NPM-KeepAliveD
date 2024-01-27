@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+
+  # Official setup instructions https://nginxproxymanager.com/setup/
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:2.10.4
+    restart: unless-stopped
+    container_name: revprox  # This is the container name that will be passed to script
+    ports:
+      - 80:80  
+      - 443:443
+      - <MGT_IP>:81:81  # Only allow connections to dashboardfrom something like management vlan 
+    volumes:
+      - ./NPM_data/:/data
+      - ./NPM_letsencrypt/:/etc/letsencrypt
+    environment:
+      PUID: 1000
+      PGID: 1000
+    healthcheck:
+      test: ["CMD", "/bin/check-health"]
+      start_period: 150s
+      interval: 10s
+      timeout: 3s
