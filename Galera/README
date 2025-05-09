@@ -1,0 +1,20 @@
+user for running script:
+keepaliveddd 
+
+
+sudo adduser keepaliveddd
+
+<SOME_SUPER_SECURE_PASSWORD>
+
+#Galera nodes    
+'''
+sudo apt install galera-4 mariadb-server
+'''
+
+#Load balancers
+'''
+sudo apt install keepalived nginx
+'''
+
+
+Of course change what needs to be changed in config files.
