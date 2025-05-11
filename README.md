@@ -9,6 +9,8 @@ If you have more than 3 nodes then copy KPAVD-VM-3.conf and edit it
 
 At the bottom I've written some examples on how to divide traffic for better security.
 
+I'll be maybe developing it further on my own [gitea](https://tea.shupogaki.org/YuruC3/NPM-KeepAliveD) cuz it feels nicer to use than Github.
+
 ## Requirements
 Docker
 
